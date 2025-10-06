@@ -36,7 +36,7 @@ class TuringMachine:
             self.cinta.append(self.espacio_en_blanco)
 
         symbol = self.cinta[self.punto_que_se_evalua]
-        key = (self.estados, symbol)
+        key = (self.state, symbol)
 
         if key not in self.transicion:
             return False 
@@ -44,7 +44,7 @@ class TuringMachine:
         estado_nuevo, new_symbol, move = self.transicion[key]
 
         self.cinta[self.punto_que_se_evalua] = new_symbol
-        self.estados = estado_nuevo
+        self.state = estado_nuevo
         if move == "R":
             self.punto_que_se_evalua += 1
         elif move == "L":
