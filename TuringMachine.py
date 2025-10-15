@@ -48,7 +48,10 @@ def TuringLoop(states,input,start,alph,actval,i,change):
             input=replacement(input,i,states[start][actval][x+1])
             #print(input)
             insidealph(actval,alph)
-            actval=blankswap(input,i)
+            if states[start][actval][-1] in states:
+                actval1=blankswap(input,i)
+            else:
+                actval=blankswap(input,i)
         
         elif states[start][actval][x]=="R":
             print("r")
