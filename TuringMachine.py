@@ -40,6 +40,7 @@ def TuringLoop(states,input,start,alph,actval,i,change):
             start=states[start][actval][x]
             if actval1!="":
                 actval=actval1
+                actval1=""
             return input,start,actval,i,change,actval1
 
         if states[start][actval][x]=="w":
